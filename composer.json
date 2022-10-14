@@ -3,11 +3,12 @@
   "description": "Pull dealer inventory from google cloud platform (pub/sub) and save it in database",
   "require": {
     "php": "^7.2.2",
+    "guzzlehttp/guzzle": "^6.5.5",
     "magento/framework": "103.0.*",
     "google/cloud-pubsub": "^1.39"
   },
   "type": "magento2-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": [
     "MIT"
   ],
