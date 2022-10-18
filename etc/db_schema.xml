@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="dealer_stock_status" resource="default" engine="innodb" comment="Dealer stock status">
+        <column xsi:type="int" name="id" unsigned="false" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="dealer_id" comment="Dealer id" identity="false" nullable="false" unsigned="false"/>
+        <column xsi:type="varchar" name="product_sku" nullable="false" length="64" comment="Product SKU"/>
+        <column xsi:type="int" name="qty" comment="Quantity" identity="false" nullable="false" unsigned="false"/>
+        <column xsi:type="tinyint" name="stock_status" comment="Stock status" identity="false" nullable="false"
+                unsigned="false"/>
+        <column xsi:type="timestamp" name="created_at" comment="Created at" default="CURRENT_TIMESTAMP"/>
+        <column xsi:type="timestamp" name="updated_at" comment="Updated at" default="CURRENT_TIMESTAMP"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="DEALER_ID_DEALER_DEALER_STOCK_STATUS_ID" table="dealer_stock_status"
+                    column="dealer_id" referenceTable="dealer" referenceColumn="id"/>
+        <constraint xsi:type="foreign" referenceId="PRODUCT_SKU_DEALER_DEALER_STOCK_STATUS_PRODUCT_SKU"
+                    table="dealer_stock_status" column="product_sku" referenceTable="catalog_product_entity"
+                    referenceColumn="sku"/>
+    </table>
+</schema>

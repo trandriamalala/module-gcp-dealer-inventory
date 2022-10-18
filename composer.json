@@ -2,11 +2,13 @@
   "name": "brp/module-gcp-dealer-inventory",
   "description": "Pull dealer inventory from google cloud platform (pub/sub) and save it in database",
   "require": {
-    "google/cloud-pubsub": "^1.39",
-    "wikimedia/avro": "^1.9"
+    "google/cloud-core" : "^1.46",
+    "guzzlehttp/guzzle": "^6.5.5",
+    "magento/framework": "103.0.*",
+    "google/cloud-pubsub": "^1.39"
   },
   "type": "magento2-module",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "license": [
     "MIT"
   ],
